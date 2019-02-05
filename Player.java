@@ -5,10 +5,12 @@ public class Player {
   // we don't want other objects changing these directly, so they are private
   private String name;
   private int health;
+  private int mana;
   
   // this is called a "constructor". It is automatically called when someone creates a new Player object
   Player() {
     this.health = 100;
+    this.mana = 100;
   }
   
   // next we have "setters" and "getters"
@@ -29,9 +31,12 @@ public class Player {
     return this.name;
   }
   
-  // this will get the health
+  // this will get the health and Mana
   public int getHealth() {
     return this.health;
+  }
+  public int getMana() {
+    return this.mana;
   }
   // here is where you should insert your setHealth and getHealth methods
   // what are some conditions that need to be checked?

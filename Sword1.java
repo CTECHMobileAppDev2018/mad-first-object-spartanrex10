@@ -1,13 +1,17 @@
- public class Sword {
+ public class Sword1 {
  private String name;
  private int damage;
  private boolean enchanted;
  private float attackSpeed;
 //Setters
- Sword() {
-   this.damage = (int)(Math.random() * 15 + 1);
+ Sword1() {
+   this.damage = (int)(Math.random() * 15 + 10);
    this.attackSpeed = (float)(Math.random() * 3 + 1);
+   this.enchanted = (boolean)(Math.random() < 0.5);
  }
+ 
+ 
+ 
    //Sword name setter
    public void setName(String swordName) { 
 
@@ -29,12 +33,10 @@
   public String getName() {
     return this.name;
   }
-       //Hope, this will prevent ridiculously long decimals.
-     /* if (playerName.length() < 1) {
-      this.name = "invalid";
-      return;
-      
-      System.out.printf("%.2f", val);
-    }*/
-    // int random = (int)(Math.random() * 50 + 1);
+  public String getEnchanted() {
+    return Math.random() < 0.5;
+  }
+
+    //This is to randomly selct numbers
+// int random = (int)(Math.random() * 50 + 1);
  }

@@ -9,17 +9,28 @@ public class StartGame {
     player2.setName("Zach");
     
     System.out.println("Player1 name is: " + player1.getName());
-    System.out.println(player1.getName() + " is at: " + player1.getHealth() + "Hp");
+    System.out.println(player1.getHealth() + "Hp");
+    System.out.println(player1.getMana() + "Mp");
     System.out.println("Player2 name is: " + player2.getName());
-    System.out.println(player2.getName() + " is at: " + player2.getHealth() + "Hp");
+    System.out.println(player2.getHealth() + "Hp");
+    System.out.println(player2.getMana() + "Mp");
     
-    Sword sword1 = new Sword();
+    Sword1 sword1 = new Sword1();
     sword1.setName("Longsword");
+    Sword1 sword2 = new Sword1();
+    sword2.setName("Excalibur");
     
     System.out.println(player1.getName() + " is using; a " + sword1.getName());
     System.out.print("The " + sword1.getName() + " deals " + sword1.getDamage() + "Dmg. The " + sword1.getName() + " has an attack speed of: ");
     System.out.printf("%.2f", sword1.getAttackSpeed());
     System.out.println("/s");
+    System.out.println("This sword is enchanted: " + sword1.getEnchanted());
+    
+    System.out.println(player2.getName() + " is using; a " + sword2.getName());
+    System.out.print("The " + sword2.getName() + " deals " + sword2.getDamage() + "Dmg. The " + sword2.getName() + " has an attack speed of: ");
+    System.out.printf("%.2f", sword2.getAttackSpeed());
+    System.out.println("/s");
+    System.out.println("This sword is enchanted: " + sword2.getEnchanted());
     // System.out.println(player1.getName() + "'s health is: " + player1.getHealth());
   }  
   
