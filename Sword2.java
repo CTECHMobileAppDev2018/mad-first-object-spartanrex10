@@ -1,11 +1,11 @@
- public class Sword1 {
+public class Sword2 {
  private String name;
  private int damage;
  private float attackSpeed;
 //Setters
- Sword1() {
-   this.damage = (int)(Math.random() * 5 + 10);
-   this.attackSpeed = (float)(Math.random() * 2 + 1);
+ Sword2() {
+   this.damage = (int)(Math.random() * 5 + 15);
+   this.attackSpeed = (float)(Math.random() * 0.5 + 1);
  }
  
  
@@ -31,7 +31,4 @@
   public String getName() {
     return this.name;
   }
-
-    //This is to randomly selct numbers
-// int random = (int)(Math.random() * 50 + 1);
- }
+}
