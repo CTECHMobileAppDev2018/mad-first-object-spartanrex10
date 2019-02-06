@@ -1,19 +1,35 @@
-
+import java.util.Scanner;
 public class StartGame {
   
   public static void main(String[] args) {
    
+    //Creates the array, NOT the players
+    Player[] playerArray = new Player[5];
+    //Creating and naming the players
     Player player1 = new Player();
-    player1.setName("Mr. Bartucz");
     Player player2 = new Player();
-    player2.setName("Zach");
+    for (int i = 1; i <= 2; i++) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Please input the name of Player" + i + ":");
+    String name = sc.nextLine();
+    if (i == 1) {
+    player1.setName(name);
+    }
+    if (i == 2) {
+    player2.setName(name);
+    }
+    }
+    //Putting the players in the array
+    playerArray[0] = player1;
+    playerArray[1] = player2;
     
-    System.out.println("Player1 name is: " + player1.getName());
-    System.out.println(player1.getHealth() + "Hp");
-    System.out.println(player1.getMana() + "Mp");
-    System.out.println("Player2 name is: " + player2.getName());
-    System.out.println(player2.getHealth() + "Hp");
-    System.out.println(player2.getMana() + "Mp");
+ for (int i = 0; i < playerArray.length; i++) {
+ if (playerArray[i] != null) { // we have to check to see if there is a player object in the array
+    System.out.println("Player" + i + " name is: " + playerArray[i].getName());
+    System.out.println(playerArray[i].getHealth() + "Hp");
+    System.out.println(playerArray[i].getMana() + "Mp");
+    }
+   }
     
     Sword1 sword1 = new Sword1();
     sword1.setName("Longsword");
@@ -32,19 +48,19 @@ public class StartGame {
     
     float damagePerSecond1 = sword1.getDamage()*sword1.getAttackSpeed();
     float damagePerSecond2 = sword2.getDamage()*sword2.getAttackSpeed();
-    System.out.print(sword1.getName() + " deals: ");
+    System.out.print("The " + sword1.getName() + " deals: ");
     System.out.printf("%.2f", damagePerSecond1);
     System.out.println("/s");
-    System.out.print(sword2.getName() + " deals: ");
+    System.out.print("The " + sword2.getName() + " deals: ");
     System.out.printf("%.2f", damagePerSecond2);
     System.out.println("/s");
     
     if (damagePerSecond1 > damagePerSecond2) {
-      System.out.println(player1.getName() + " slashes " + player2.getName() + "across the chest, killing them.");
+      System.out.println(player1.getName() + " slashes " + player2.getName() + " across the chest, killing them.");
       System.out.println(player1.getName() + " Wins!");
     }
     if (damagePerSecond1 < damagePerSecond2) {
-      System.out.println(player2.getName() + " slashes " + player1.getName() + "across the chest, killing them.");
+      System.out.println(player2.getName() + " slashes " + player1.getName() + " across the chest, killing them.");
       System.out.println(player2.getName() + " Wins!");
     }
     // System.out.println(player1.getName() + "'s health is: " + player1.getHealth());
