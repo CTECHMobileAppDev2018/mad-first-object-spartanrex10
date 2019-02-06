@@ -32,9 +32,21 @@ public class StartGame {
     
     float damagePerSecond1 = sword1.getDamage()*sword1.getAttackSpeed();
     float damagePerSecond2 = sword2.getDamage()*sword2.getAttackSpeed();
-    System.out.print
+    System.out.print(sword1.getName() + " deals: ");
     System.out.printf("%.2f", damagePerSecond1);
+    System.out.println("/s");
+    System.out.print(sword2.getName() + " deals: ");
     System.out.printf("%.2f", damagePerSecond2);
+    System.out.println("/s");
+    
+    if (damagePerSecond1 > damagePerSecond2) {
+      System.out.println(player1.getName() + " slashes " + player2.getName() + "across the chest, killing them.");
+      System.out.println(player1.getName() + " Wins!");
+    }
+    if (damagePerSecond1 < damagePerSecond2) {
+      System.out.println(player2.getName() + " slashes " + player1.getName() + "across the chest, killing them.");
+      System.out.println(player2.getName() + " Wins!");
+    }
     // System.out.println(player1.getName() + "'s health is: " + player1.getHealth());
   }  
   
